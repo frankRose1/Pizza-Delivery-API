@@ -1,0 +1,11 @@
+[
+    {"name": "plain pizza", "price": 10},
+    {"name": "pepperoni pizza", "price": 13},
+    {"name": "buffalo chicken pizza", "price": 17},
+    {"name": "veggie pizza", "price": 14},
+    {"name": "meatball parm hero", "price": 8.5},
+    {"name": "chicken parm hero", "price": 10},
+    {"name": "coca-cola - 12oz", "price": 1.5},
+    {"name": "sprite - 12oz", "price": 1.5},
+    {"name": "snapple - 16oz", "price": 2.25}
+]
