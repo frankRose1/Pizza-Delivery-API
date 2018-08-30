@@ -1,2 +1,2 @@
 # to ignore the API keys needed to make test payments to stripe
-lib/stripeKeys.js
+lib/apiKeys.js

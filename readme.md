@@ -8,8 +8,10 @@ You will need your own API keys from stripe if you wish to test the ```orders.po
 * The contents of apiKeys.js should look like this:
 ```javascript
 const apiKeys = {
-    stripePublishable: 'your_publishable_key',
-    stripeSecret: 'your_secret_key'
+    stripePublishable: 'your publishable key',
+    stripeSecret: 'your secret key',
+    mailGunKey: 'your mailgun apiKey',
+    mailGunDomain: 'your mailgun domain'
 };
 
 module.exports = apiKeys;
