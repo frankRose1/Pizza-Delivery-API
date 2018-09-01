@@ -32,7 +32,7 @@ module.exports = apiKeys;
 6. When an order is placed, user is emailed a receipt. Integration with Mailgun is used to email the user.
 
 ## Required Fields for Endpoints
-1. ```/users```
+1. __/users__
     * ```POST```
         * payload: 
     ```javascript
@@ -56,8 +56,8 @@ module.exports = apiKeys;
         * auth token in headers ```headers.id```
         * email in queryString ```/users?email=jane@test.com```
 
-2. ```/tokens```
-        * ```POST```
+2. __/tokens__
+    * ```POST```
         * payload: 
     ```javascript
         {
@@ -78,12 +78,12 @@ module.exports = apiKeys;
     * ```DELETE```
         * token in queryString ```/tokens?id=5a4scbros4ipp90x59vm```
 
-3. ```/menu```
+3. __/menu__
     * ```GET```
         * auth token in headers ```headers.id```
         * email in queryString ```/menu?email=jane@test.com```
 
-4. ```/cart```
+4. __/cart__
     * ```POST```
         * auth token in headers ```headers.id```
         * the payload will need the users email and atleast one items from the menu stored in an array : 
@@ -109,7 +109,7 @@ module.exports = apiKeys;
         * auth token in headers ```headers.id```
         * cartId in queryString ```/cart?id=j5a4scbros4ipp90x59vm```
 
-5. ```/orders```
+5. __/orders__
     * ```POST```
         *  auth token in headers ```headers.id```
         *  payload must have the cartId:
