@@ -1,5 +1,6 @@
 # API for a Pizza Delivery Company
 This is the backend for a pizza delivery company where users can sign up, add items to a cart, and place/view orders. Authorization is included.
+I also added a command line interface that will launch along with the rest of the app. Enter ```man``` or ```help``` to get a list of commands.
 
 ## Regarding API keys for Stripe & Mailgun
 You will need your own API keys from stripe and mailgun if you wish to test the ```orders.post``` handler
@@ -30,6 +31,8 @@ module.exports = apiKeys;
 5. A logged-in user is able to create an order. Integration with Stripe is used for testing payments.
 
 6. When an order is placed, user is emailed a receipt. Integration with Mailgun is used to email the user.
+
+7. CLI will run in the terminal that has useful information about the application
 
 ## Required Fields for Endpoints
 1. __/users__
