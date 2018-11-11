@@ -1,6 +1,5 @@
-<!-- prettier-ignore -->
 # API for a Pizza Delivery Company
-This is the backend for a pizza delivery company where users can sign up, add items to a cart, and place/view orders. Auth is included. After a token is created it will need to be sent in the Authorization headers to access protected endpoints.
+This is the backend for a pizza delivery company where users can sign up, add items to a cart, and place/view orders. Authorization is included. After a token is created it will need to be sent in the Authorization headers to access protected endpoints. Background workers will run once the app starts and continue to execute once every 24 hours, deleting any expired tokens and logging any errors during the process to the ```.logs``` directory.
 I also added a command line interface that will launch along with the rest of the app. Enter ```man``` or ```help``` to get a list of commands.
 
 ## Regarding API keys for Stripe & Mailgun
@@ -35,6 +34,9 @@ module.exports = apiKeys;
 
 7. CLI will run in the terminal that has useful information about the application
 
+8. Background workers will run once immediately and then again once every 24 hours, deleteing any expired tokens.
+    Any errors realted to background workers are logged to the ```.logs``` directory
+
 ## Required Fields for Endpoints
 1. __/users__
     * ```POST```
@@ -45,13 +47,13 @@ module.exports = apiKeys;
             "lastName": "Doe",
             "email": "jane@test.com",
             "street": "123 Sesame Street",
-            "password": "password", /*password is hashed and not stored*/
+            "password": "password", /*password will be hashed*/
             "tosAgreement": true
         }
     ```
     * ```GET```
         * auth token in headers ```"Authorization": "your_token"```
-        * email in queryString ```/users?email=jane@test.com"
+        * email in queryString ```/users?email=jane@test.com"```
     * ```PUT```
         * auth token in headers ```"Authorization": "your_token"```
         * email in query string ```/users?email=jane@test.com```
@@ -115,7 +117,7 @@ module.exports = apiKeys;
 
 5. __/orders__
     * ```POST```
-        *  auth token in headers ```headers.id```
+        *  auth token in headers ```"Authorization": "your_token"```
         *  payload must have the cartId:
         ```javascript
             {
